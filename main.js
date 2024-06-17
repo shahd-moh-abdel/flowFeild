@@ -29,7 +29,7 @@ resizeCanvas();
 function drawCanvas(ctx){
     ctx.fillStyle = 'white'
     ctx.strokeStyle = 'white';
-    ctx.lineWidth = 0.2
+    ctx.lineWidth =1;
     class Particle{
         constructor(effect){
             this.effect = effect;
