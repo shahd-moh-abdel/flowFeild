@@ -42,9 +42,12 @@ function drawCanvas(ctx){
             this.maxLength = Math.floor(Math.random() * 50 + 10);
             this.angle = 0;
             this.timer = this.maxLength * 2;
+            this.heu =9;
+
         }
         draw(context){
             // context.fillRect(this.x,this.y,10,10);
+            context.strokeStyle = 'hsl(' + this.heu + ',100%,50%)';
             context.beginPath();
             context.moveTo(this.history[0].x,this.history[0].y);
             for (let i = 0; i < this.history.length; i++) {
@@ -54,6 +57,7 @@ function drawCanvas(ctx){
             
         }
         update(){
+            this.heu+= 0.1
             this.timer--;
             if(this.timer >= 1){
                 let x = Math.floor(this.x / this.effect.cellSize);
@@ -93,7 +97,7 @@ function drawCanvas(ctx){
             this.particlesNumber = 900;
             this.cellSize = 5;
             this.curve = 0.8;
-            this.zoom = 0.2
+            this.zoom = 0.02
             this.rows;
             this.cols;
             this.flowFeild = [];
